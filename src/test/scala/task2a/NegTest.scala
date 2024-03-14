@@ -5,8 +5,10 @@ import org.junit.Test
 
 class NegTest :
 
+  private val predicateExample: String => Boolean = _ == ""
+
   @Test def testNegative(): Unit = {
-    assertFalse(neg(""))
-    assertTrue(neg("foo"))
-    assertTrue(neg("foo") && !neg(""))
+    assertFalse(neg(predicateExample)(""))
+    assertTrue(neg(predicateExample)("foo"))
+    assertTrue(neg(predicateExample)("foo") && !neg(predicateExample)(""))
   }
