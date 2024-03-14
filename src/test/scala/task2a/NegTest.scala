@@ -23,18 +23,34 @@ class NegTest :
     assertFalse(genericNeg(isLowerCase)('a'))
   }
 
-  @Test def testCurriedNeg(): Unit = {
-    assertTrue(curriedNeg(1)(2)(2))
-    assertFalse(curriedNeg(1)(2)(1))
-    assertTrue(curriedNeg(3)(4)(4))
-    assertTrue(curriedNeg(-3)(4)(4))
-    assertFalse(curriedNeg(-3)(4)(-4))
+  @Test def testCurriedValNeg(): Unit = {
+    assertTrue(curriedValNeg(1)(2)(2))
+    assertFalse(curriedValNeg(1)(2)(1))
+    assertTrue(curriedValNeg(3)(4)(4))
+    assertTrue(curriedValNeg(-3)(4)(4))
+    assertFalse(curriedValNeg(-3)(4)(-4))
   }
 
-  @Test def testNonCurriedNeg(): Unit = {
-    assertTrue(nonCurriedNeg(1,2,2))
-    assertFalse(nonCurriedNeg(1,2,1))
-    assertTrue(nonCurriedNeg(3,4,4))
-    assertTrue(nonCurriedNeg(-3,4,4))
-    assertFalse(nonCurriedNeg(-3,4,-4))
+  @Test def testCurriedDefNeg(): Unit = {
+    assertTrue(curriedDefNeg(1)(2)(2))
+    assertFalse(curriedDefNeg(1)(2)(1))
+    assertTrue(curriedDefNeg(3)(4)(4))
+    assertTrue(curriedDefNeg(-3)(4)(4))
+    assertFalse(curriedDefNeg(-3)(4)(-4))
+  }
+
+  @Test def testNonCurriedValNeg(): Unit = {
+    assertTrue(nonCurriedValNeg(1,2,2))
+    assertFalse(nonCurriedValNeg(1,2,1))
+    assertTrue(nonCurriedValNeg(3,4,4))
+    assertTrue(nonCurriedValNeg(-3,4,4))
+    assertFalse(nonCurriedValNeg(-3,4,-4))
+  }
+
+  @Test def testNonCurriedDefNeg(): Unit = {
+    assertTrue(nonCurriedDefNeg(1,2,2))
+    assertFalse(nonCurriedDefNeg(1,2,1))
+    assertTrue(nonCurriedDefNeg(3,4,4))
+    assertTrue(nonCurriedDefNeg(-3,4,4))
+    assertFalse(nonCurriedDefNeg(-3,4,-4))
   }
