@@ -22,3 +22,19 @@ class NegTest :
     assertTrue(genericNeg(isLowerCase)('A'))
     assertFalse(genericNeg(isLowerCase)('a'))
   }
+
+  @Test def testCurriedNeg(): Unit = {
+    assertTrue(curriedNeg(1)(2)(2))
+    assertFalse(curriedNeg(1)(2)(1))
+    assertTrue(curriedNeg(3)(4)(4))
+    assertTrue(curriedNeg(-3)(4)(4))
+    assertFalse(curriedNeg(-3)(4)(-4))
+  }
+
+  @Test def testNonCurriedNeg(): Unit = {
+    assertTrue(nonCurriedNeg(1,2,2))
+    assertFalse(nonCurriedNeg(1,2,1))
+    assertTrue(nonCurriedNeg(3,4,4))
+    assertTrue(nonCurriedNeg(-3,4,4))
+    assertFalse(nonCurriedNeg(-3,4,-4))
+  }
