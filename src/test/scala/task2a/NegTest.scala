@@ -24,33 +24,33 @@ class NegTest :
   }
 
   @Test def testCurriedValNeg(): Unit = {
-    assertTrue(curriedValNeg(1)(2)(2))
-    assertFalse(curriedValNeg(1)(2)(1))
-    assertTrue(curriedValNeg(3)(4)(4))
-    assertTrue(curriedValNeg(-3)(4)(4))
-    assertFalse(curriedValNeg(-3)(4)(-4))
+    assertTrue(p1(1)(2)(2))
+    assertFalse(p1(1)(2)(1))
+    assertTrue(p1(3)(4)(4))
+    assertTrue(p1(-3)(4)(4))
+    assertFalse(p1(-3)(4)(-4))
   }
 
   @Test def testCurriedDefNeg(): Unit = {
-    assertTrue(curriedDefNeg(1)(2)(2))
-    assertFalse(curriedDefNeg(1)(2)(1))
-    assertTrue(curriedDefNeg(3)(4)(4))
-    assertTrue(curriedDefNeg(-3)(4)(4))
-    assertFalse(curriedDefNeg(-3)(4)(-4))
+    assertTrue(p3(1)(2)(2))
+    assertFalse(p3(1)(2)(1))
+    assertTrue(p3(3)(4)(4))
+    assertTrue(p3(-3)(4)(4))
+    assertFalse(p3(-3)(4)(-4))
   }
 
   @Test def testNonCurriedValNeg(): Unit = {
-    assertTrue(nonCurriedValNeg(1,2,2))
-    assertFalse(nonCurriedValNeg(1,2,1))
-    assertTrue(nonCurriedValNeg(3,4,4))
-    assertTrue(nonCurriedValNeg(-3,4,4))
-    assertFalse(nonCurriedValNeg(-3,4,-4))
+    assertTrue(p2(1,2,2))
+    assertFalse(p2(1,2,1))
+    assertTrue(p2(3,4,4))
+    assertTrue(p2(-3,4,4))
+    assertFalse(p2(-3,4,-4))
   }
 
   @Test def testNonCurriedDefNeg(): Unit = {
-    assertTrue(nonCurriedDefNeg(1,2,2))
-    assertFalse(nonCurriedDefNeg(1,2,1))
-    assertTrue(nonCurriedDefNeg(3,4,4))
-    assertTrue(nonCurriedDefNeg(-3,4,4))
-    assertFalse(nonCurriedDefNeg(-3,4,-4))
+    assertTrue(p4(1,2,2))
+    assertFalse(p4(1,2,1))
+    assertTrue(p4(3,4,4))
+    assertTrue(p4(-3,4,4))
+    assertFalse(p4(-3,4,-4))
   }

@@ -9,7 +9,9 @@ def genericNeg[X](predicate: X => Boolean): X => Boolean =
 
 
 // Task 2b
-val curriedValNeg: Int => Int => Int => Boolean = x => y => z => x <= y && y == z
-def curriedDefNeg(x: Int)(y: Int)(z: Int): Boolean = x <= y && y == z
-val nonCurriedValNeg: (Int, Int, Int) => Boolean = (x, y, z) => x <= y && y == z
-def nonCurriedDefNeg(x: Int, y: Int, z: Int): Boolean = x <= y && y == z
+val p1: Int => Int => Int => Boolean = x => y => z => x <= y && y == z
+val p2: (Int, Int, Int) => Boolean = (x, y, z) => x <= y && y == z
+def p3(x: Int)(y: Int)(z: Int): Boolean = x <= y && y == z
+def p4(x: Int, y: Int, z: Int): Boolean = x <= y && y == z
+
+
