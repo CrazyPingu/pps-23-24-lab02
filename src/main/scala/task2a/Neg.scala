@@ -18,5 +18,5 @@ def p4(x: Int, y: Int, z: Int): Boolean = x <= y && y == z
 def compose(f: Int => Int, g: Int => Int): Int => Int =
   (x: Int) => f(g(x))
 
-def genericCompose[X](f: X => X, g: X => X): X => X =
-  (x: X) => f(g(x))
+def genericCompose[A, B, C](f: B => C, g: A => B): A => C =
+  x => f(g(x))
