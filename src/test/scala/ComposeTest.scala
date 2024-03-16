@@ -1,5 +1,4 @@
-package task2a
-
+import Exercise.{compose, genericCompose}
 import org.junit.Assert.assertEquals
 import org.junit.jupiter.api.Test
 

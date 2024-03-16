@@ -1,5 +1,4 @@
-package task2a
-
+import Exercise.{genericNeg, neg, p1, p2, p3, p4}
 import org.junit.Assert.{assertFalse, assertTrue}
 import org.junit.Test
 

@@ -1,5 +1,4 @@
-package task2a
-
+import Exercise.{Sign, positive}
 import org.junit.Assert.assertEquals
 import org.junit.Test
 
