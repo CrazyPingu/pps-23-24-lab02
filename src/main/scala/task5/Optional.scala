@@ -1,7 +1,7 @@
 package task5
 
 
-object Optionals:
+object Optionals extends App:
   /**
    * Optional is a type that represents a value that may or may not be present.
    * Similar to Optional in Java but using the ADT concept.
@@ -31,7 +31,6 @@ object Optionals:
       case _ => false
 
     /**
-     *
      * getOrElse returns the value of the optional if it is Maybe, otherwise it returns the default value.
      * Example:
      * orElse(Maybe(1), 0) == 1
@@ -61,4 +60,18 @@ object Optionals:
      * @tparam B the type of the result of the function
      * @return the result of applying the function to the value of the optional if it is Maybe, otherwise Empty
      */
-    def map[A, B](optional: Optional[A], f: A => B): Optional[B] = ???
+    def map[A, B](optional: Optional[A], f: A => B): Optional[B] = optional match
+      case Maybe(value) => Maybe(f(value))
+      case Empty() => Empty()
+
+    /**
+     * filter keeps the value (if present, otherwise the output is Empty) only if it satisfies the given predicate.
+     *
+     * @param optional the optional to filter
+     * @param predicate the predicate function
+     * @tparam A the type of the optional
+     * @return the optional with value if it satisfies the predicate, otherwise Empty
+     */
+    def filter[A](optional: Optional[A])(predicate: A => Boolean): Optional[A] = optional match
+      case Maybe(value) if predicate(value) => Maybe(value)
+      case _ => Empty()
