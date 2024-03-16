@@ -88,3 +88,41 @@ object Exercise extends App:
   println(gcd(6, 24)) // 6
   println(gcd(14, 7)) // 7
   println("-----------------------")
+
+  // Task 4
+  enum Shape:
+    case Rectangle(width: Double, height: Double)
+    case Circle(radius: Double)
+    case Square(side: Double)
+
+  import Shape.*
+
+  def perimeter(shape: Shape): Double = shape match
+    case Rectangle(width, height) => 2 * (width + height)
+    case Circle(radius) => 2 * Math.PI * radius
+    case Square(side) => 4 * side
+
+  def area(shape: Shape): Double = shape match
+    case Rectangle(width, height) => width * height
+    case Circle(radius) => Math.PI * Math.pow(radius, 2)
+    case Square(side) => Math.pow(side, 2)
+
+  def scale(shape: Shape, factor: Double): Shape = shape match
+    case Rectangle(width, height) => Rectangle(width * factor, height * factor)
+    case Circle(radius) => Circle(radius * factor)
+    case Square(side) => Square(side * factor)
+
+  println("TASK 4")
+  val r = Shape.Rectangle(2, 3)
+  val c = Shape.Circle(3)
+  val s = Shape.Square(2)
+  println(f"Rectangle perimeter: ${perimeter(r)}%.2f") // 10.00
+  println(f"Rectangle area: ${area(r)}%.2f") // 6.00
+  println(f"Rectangle scale: ${scale(r, 2)}") // Rectangle(4.0,6.0)
+  println(f"Circle perimeter: ${perimeter(c)}%.2f") // 18.85
+  println(f"Circle area: ${area(c)}%.2f") // 28.27
+  println(f"Circle scale: ${scale(c, 2)}") // Circle(6.0)
+  println(f"Square perimeter: ${perimeter(s)}%.2f") // 8.00
+  println(f"Square area: ${area(s)}%.2f") // 4.00
+  println(f"Square scale: ${scale(s, 2)}") // Square(4.0)
+  println("-----------------------")
