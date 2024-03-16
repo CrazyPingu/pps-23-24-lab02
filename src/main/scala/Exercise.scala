@@ -1,3 +1,5 @@
+import scala.annotation.tailrec
+
 object Exercise extends App:
 
   // Task 2a
@@ -47,7 +49,9 @@ object Exercise extends App:
   // Currying
   val p1: Int => Int => Int => Boolean = x => y => z => x <= y && y == z
   val p2: (Int, Int, Int) => Boolean = (x, y, z) => x <= y && y == z
+
   def p3(x: Int)(y: Int)(z: Int): Boolean = x <= y && y == z
+
   def p4(x: Int, y: Int, z: Int): Boolean = x <= y && y == z
 
 
@@ -70,4 +74,17 @@ object Exercise extends App:
   println(genericCompose(fg, gg)("test")) // testtesta
   println(genericCompose(fg, gg)("")) // a
   println(genericCompose(fg, gg)("b")) // bba
+  println("-----------------------")
+
+  // Task 3
+  @tailrec
+  def gcd(a: Int, b: Int): Int = b match
+    case 0 => a
+    case _ => gcd(b, a % b)
+
+
+  println("TASK 3")
+  println(gcd(12, 8)) // 4
+  println(gcd(6, 24)) // 6
+  println(gcd(14, 7)) // 7
   println("-----------------------")
